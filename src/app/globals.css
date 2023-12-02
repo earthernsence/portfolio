@@ -25,3 +25,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.c-projects-bg {
+  background-image: url("../../public/bg/real_development.png");
+  filter: blur(0.5rem)
+}
