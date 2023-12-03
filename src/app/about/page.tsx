@@ -3,8 +3,13 @@ import picture from "../assets/about/picture.jpg";
 import rainier from "../assets/about/washington.png";
 import Image from "next/image";
 import URL from "../common/URL";
+import { Metadata } from "next";
 
-export const AboutPage = () => {
+export const metadata: Metadata = {
+  title: "About me",
+};
+
+const AboutPage = () => {
   return (
     <>
       <div className="place-self-center max-w-7xl pt-0 pb-12 pl-16 pr-16 text-left ">

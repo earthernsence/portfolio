@@ -11,14 +11,20 @@ type GitUser = {
 }
 
 type User = {
-  name: string | null,
-  email: string | null,
+  name?: string | null | undefined,
+  email?: string | null | undefined,
   login: string,
   id: number,
   node_id: string,
   avatar_url: string,
   gravatar_id: string | null,
   url: string,
+}
+
+type Committer = {
+  name?: string | undefined,
+  email?: string | undefined,
+  date?: string | undefined
 }
 
 type Commit = {
@@ -29,26 +35,26 @@ type Commit = {
     comments_url: string,
     commit: {
       url: string,
-      author: null | GitUser
-      committer: GitUser
+      author: null | Committer
+      committer: null | Committer
       message: string,
       comment_count: number,
       tree: {
         sha: string,
         url: string,
       },
-      verification: {
+      verification?: {
         verified: boolean,
         reason: string,
         payload: string | null,
         signature: string | null,
-      }
+      } | undefined
     },
-    author: User,
-    committer: null | User,
-    stats: {
-      additions: number,
-      deletions: number,
+    author?: null | User,
+    committer?: null | User,
+    stats?: {
+      additions?: number | undefined,
+      deletions?: number | undefined,
     }
 }
 
@@ -88,25 +94,67 @@ interface OctokitResponse<T, S extends number = number> {
     data: T;
 }
 
+type RepoOwner = {
+  name?: string | null | undefined,
+  email?: string | null | undefined,
+  login: string,
+  id: number,
+  node_id: string,
+  avatar_url: string,
+  gravatar_id: string | null,
+  url: string,
+}
 
+type Repository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: RepoOwner;
+  html_url: string;
+}
 
 export const CommitsList = () => {
-  const [commits, setCommits] = useState<OctokitResponse<any | Commit, number>>();
+  const [recentCommits, setRecentCommits] = useState<Array<Commit>>();
+  const [hasLoaded, setHasLoaded] = useState(false);
 
+  // This might be magic.
   useEffect(() => {
-    const octokit = new Octokit({ auth: process.env.GH_TOKEN });
+    const octokit = new Octokit({ auth: process.env.NEXT_PUBLIC_GH_TOKEN });
     const owner = "earthernsence",
-          repo = "etch-a-sketch-svelte",
-          perPage = 5;
+          perPage = 1;
 
-    const fiveRecentCommits = async() => await octokit.request(
-      `GET /repos/${owner}/${repo}/commits`, { owner, repo, per_page: perPage }
-    ).then((commits) => { 
-      setCommits(commits);
-      console.log(commits);
+    setHasLoaded(false);
+
+    const fetchUserRepositories = async() => await octokit.request(
+      `GET /users/{username}/repos`, { username: owner, type: "owner", sort: "updated" }
+    ).then((repos) => {
+      const commitInfo: Array<Commit> = [];
+
+      [...repos.data.slice(0, 5)].forEach(repository => {
+        const recentCommit = async() => await octokit.request(
+          `GET /repos/{owner}/{repo}/commits`, { owner, repo: repository.name, per_page: perPage }
+        ).then(commits => {
+          commitInfo.push(...commits.data);
+        });
+
+        recentCommit();
+      });
+
+      setRecentCommits(commitInfo);
+
+      return commitInfo;
     });
 
-    fiveRecentCommits();
+    fetchUserRepositories().then(() => setTimeout(() => setHasLoaded(true), 1000));
+
+    // const fiveRecentCommits = async() => await octokit.request(
+    //   `GET /repos/${owner}/${repo}/commits`, { owner, repo, per_page: perPage }
+    // ).then((commits) => { 
+    //   setCommits(commits);
+    // });
+
+    // fiveRecentCommits();
   }, []);
 
   return (
@@ -115,11 +163,14 @@ export const CommitsList = () => {
         <div className="text-xs italic text-left text-gray-500 opacity-80">
           recent commits...
         </div>
+        <div className="text-xs italic text-left text-gray-600 opacity-80">
+          this shows my 5 most recently updated repositories and their most recent commit
+        </div>
         <br />
         <div className="flex flex-col justify-between">
           {
-            commits
-            ? [...commits.data].map((commit: Commit) => (
+            (hasLoaded && recentCommits)
+            ? recentCommits.map((commit: Commit) => (
               <CommitCard commit={commit} key={commit.sha} />
             ))
             : <div className="text-s text-left text-gray-500">No recent commits to display</div>

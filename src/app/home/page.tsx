@@ -1,6 +1,6 @@
 import CommitsList from "./CommitsList";
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <>
       <div className="place-self-center max-w-6xl pt-0 pb-12 pl-16 pr-16 transform translate-y-1/4 h-[calc(100% - 3.5rem)] w-2/4">

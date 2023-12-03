@@ -10,8 +10,12 @@ import Link from "next/link";
 
 import { IconDefinition, faGithub } from "@fortawesome/free-brands-svg-icons";
 import Icon from "../common/Icon";
-import Head from "next/head";
 import { faGamepad } from "@fortawesome/free-solid-svg-icons";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+};
 
 type Page = {
   name: string;
@@ -31,7 +35,7 @@ type Project = {
   infoPages?: Array<Page>
 }
 
-export const Projects: Array<Project> = [
+const Projects: Array<Project> = [
   {
     id: "ad",
     image: logoAD,
@@ -113,7 +117,7 @@ const SingleProject = (props: { project: Project }) => {
   )
 };
 
-export const ProjectPage = () => {
+const ProjectPage = () => {
   // useEffect(() => {
   //   document.title = "Projects";
   // }, []);
