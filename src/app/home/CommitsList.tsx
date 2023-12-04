@@ -11,7 +11,8 @@ export const CommitsList = () => {
 
   // This might be magic.
   useEffect(() => {
-    // TODO: rewrite with SWR
+    // TODO: rewrite with SWR maybe -- would have to figure out how to find
+    // recent commits w/o loops or conditions somehow
     const octokit = new Octokit({ auth: process.env.NEXT_PUBLIC_GH_TOKEN });
     const owner = "earthernsence",
       perPage = 1;
