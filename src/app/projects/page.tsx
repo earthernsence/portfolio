@@ -1,16 +1,15 @@
 // "use client";
 
-// import { useEffect } from "react";
-import Image from "next/image";
 import "../globals.css";
+import Image from "next/image";
+import Link from "next/link";
 
 import logoAD from "../assets/projects/AD_loading.png";
 import noImg from "../assets/projects/no_image.png";
-import Link from "next/link";
 
-import { IconDefinition, faGithub } from "@fortawesome/free-brands-svg-icons";
-import Icon from "../common/Icon";
+import { faGithub, IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { faGamepad } from "@fortawesome/free-solid-svg-icons";
+import Icon from "../common/Icon";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -101,26 +100,27 @@ const SingleProject = (props: { project: Project }) => {
           {
             proj.route
               ? <Link href={proj.route}>
-                  <button className="rounded-lg border-solid border-2 border-transparent pt-2 pb-2 pr-4 pl-4 font-medium text-base font-sans text-black bg-white cursor-pointer transition-[border-color] duration-300 hover:border-slate-600 focus:outline-4 focus:outline focus:outline-blue-950 mr-4">More Information</button>
-                </Link>
+                <button className="rounded-lg border-solid border-2 border-transparent pt-2 pb-2 pr-4 pl-4 font-medium text-base font-sans text-black bg-white cursor-pointer transition-[border-color] duration-300 hover:border-slate-600 focus:outline-4 focus:outline focus:outline-blue-950 mr-4">More Information</button>
+              </Link>
               : <button className="rounded-lg border-solid border-2 border-transparent pt-2 pb-2 pr-4 pl-4 font-medium text-base font-sans text-black bg-white cursor-pointer transition-[border-color] duration-300 hover:border-slate-600 focus:outline-4 focus:outline focus:outline-blue-950 disabled:bg-gray-600 disabled:border-gray-500 mr-4" disabled>Info Unavailable</button>
           }
           {
             proj.infoPages
-              ? proj.infoPages.map((page: Page, index: number) => <Icon icon={page.icon} link={page.link} key={index} /> )
+              ? proj.infoPages.map((page: Page, index: number) =>
+                <Icon icon={page.icon} link={page.link} key={index} />
+              )
               : null
           }
         </div>
         <br />
       </div>
     </>
-  )
+  );
 };
 
-const ProjectPage = () => {
-  return (
-    <>
-      <div className="place-self-center w-full max-w-full pt-0 pb-12 pl-16 pr-16 text-left">
+const ProjectPage = () => (
+  <>
+    <div className="place-self-center w-full max-w-full pt-0 pb-12 pl-16 pr-16 text-left">
       <div className={`c-projects-bg fixed top-0 left-0 bg-cover w-full h-full -z-10`} />
       <div className="text-4xl">Projects</div>
       <div className="text-xl text-left w-full">
@@ -132,9 +132,8 @@ const ProjectPage = () => {
       <div className="flex flex-row flex-wrap w-full justify-evenly">
         { Projects.map((project: Project, index: number) => <SingleProject project={project} key={index} />) }
       </div>
-      </div>
-    </>
-  )
-}
+    </div>
+  </>
+);
 
 export default ProjectPage;

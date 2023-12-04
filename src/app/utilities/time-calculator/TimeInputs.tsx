@@ -1,6 +1,6 @@
 import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
-import { TimeSpan } from "./TimeSpan";
 import Globals from "../../globals";
+import { TimeSpan } from "./TimeSpan";
 
 export default function TimeInputs() {
   const [inputTextHours, setInputTextHours] = useState("");
@@ -13,40 +13,35 @@ export default function TimeInputs() {
     "seconds": setInputTextSeconds
   };
 
-  const getChangeHandler = (type: string) => {
-    return (event: ChangeEvent<HTMLInputElement>) => {
-      setters[type](event.target.value);
-      console.log(event.target.value);
-    }
-  }
-
-  const getCurrentTimeSpan = () => {
-    return TimeSpan.fromHours(parseInt(inputTextHours, 10))
-      .plus(TimeSpan.fromMinutes(parseInt(inputTextMinutes, 10)))
-      .plus(TimeSpan.fromSeconds(parseInt(inputTextSeconds, 10)));
+  const getChangeHandler = (type: string) => (event: ChangeEvent<HTMLInputElement>) => {
+    setters[type](event.target.value);
   };
+
+  const getCurrentTimeSpan = () => TimeSpan.fromHours(parseInt(inputTextHours, 10))
+    .plus(TimeSpan.fromMinutes(parseInt(inputTextMinutes, 10)))
+    .plus(TimeSpan.fromSeconds(parseInt(inputTextSeconds, 10)));
 
   return (
     <div className="flex flex-col">
       <div className="flex flex-row justify-between">
-        <input 
-          name="hours" 
-          type="number" 
-          min="0" 
-          max="23" 
-          placeholder="hours" 
+        <input
+          name="hours"
+          type="number"
+          min="0"
+          max="23"
+          placeholder="hours"
           className="text-black"
-          onChange={event => getChangeHandler("hours")(event) } 
+          onChange={event => getChangeHandler("hours")(event) }
         />
-        <input 
-          name="minutes" 
-          type="number" 
-          min="0" 
-          max="59" 
+        <input
+          name="minutes"
+          type="number"
+          min="0"
+          max="59"
           placeholder="minutes"
           onChange={event => getChangeHandler("minutes")(event) }
         />
-        <input 
+        <input
           name="seconds"
           type="number"
           min="0"
@@ -57,14 +52,14 @@ export default function TimeInputs() {
       </div>
       <br />
       <div className="flex content-center justify-center">
-        <button 
+        <button
           type="button"
-          onClick={() => Globals.times.push(getCurrentTimeSpan())} 
+          onClick={() => Globals.times.push(getCurrentTimeSpan())}
           className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded text-xs"
         >
           Add time...
         </button>
       </div>
     </div>
-  )
+  );
 }

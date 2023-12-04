@@ -11,7 +11,7 @@ abstract class Notation {
 
   public format(
     value: DecimalSource, places: number = 0, placesUnder1000: number = 0,
-    placesExponent: number = places 
+    placesExponent: number = places
   ): string {
     if (typeof value === "number" && !Number.isFinite(value)) {
       return this.infinite;
@@ -79,11 +79,11 @@ export function isExponentFullyShown(exponent: number): boolean {
 // to the threshold, meaning in some cases that the exponent will have its own exponent and that we don't
 // want to show the mantissa.
 export function formatMantissaWithExponent(mantissaFormatting: (n: number, precision: number) => string,
-exponentFormatting: (n: number, precision: number) => string, base: number, steps: number,
-mantissaFormattingIfExponentIsFormatted?: (n: number, precision: number) => string,
-separator: string = "e", forcePositiveExponent: boolean = false):
+  exponentFormatting: (n: number, precision: number) => string, base: number, steps: number,
+  mantissaFormattingIfExponentIsFormatted?: (n: number, precision: number) => string,
+  separator: string = "e", forcePositiveExponent: boolean = false):
 ((n: Decimal, precision: number, precisionExponent: number) => string) {
-  return function (n: Decimal, precision: number, precisionExponent: number): string {
+  return function(n: Decimal, precision: number, precisionExponent: number): string {
     const realBase = base ** steps;
     let exponent = Math.floor(n.log(realBase)) * steps;
     if (forcePositiveExponent) {
@@ -101,7 +101,7 @@ separator: string = "e", forcePositiveExponent: boolean = false):
     // inaccurancy being something like (realBase^(1e-16 * Math.log10(mantissa))).
     // mantissa should be at most roughly 10 so this is pretty small.
     // IDK if using Math.log or Math.log10 is faster.
-    if (!(1 <= mantissa && mantissa < realBase)) {
+    if (!(mantissa >= 1 && mantissa < realBase)) {
       const adjust = Math.floor(Math.log(mantissa) / Math.log(realBase));
       mantissa /= Math.pow(realBase, adjust);
       exponent += steps * adjust;
@@ -119,7 +119,7 @@ separator: string = "e", forcePositiveExponent: boolean = false):
     // this will use at least precision 2 on the exponent if relevant, due to the default
     // value of largeExponentPrecision: number = Math.max(2, precision) in formatExponent.
     const e = exponentFormatting(exponent, precisionExponent);
-    if (typeof mantissaFormattingIfExponentIsFormatted !== 'undefined' && !isExponentFullyShown(exponent)) {
+    if (typeof mantissaFormattingIfExponentIsFormatted !== "undefined" && !isExponentFullyShown(exponent)) {
       // No need to do a second check for roll-over.
       m = mantissaFormattingIfExponentIsFormatted(mantissa, precision);
     }
@@ -153,6 +153,4 @@ export const formatWithCommas = function formatWithCommas(value: string) {
   return decimalPointSplit.join(".");
 };
 
-export const formatInt = (value: number | Decimal) => {
-  return formatWithCommas(typeof value === "number" ? value.toFixed(0) : value.toNumber().toFixed(0));
-}
+export const formatInt = (value: number | Decimal) => formatWithCommas(typeof value === "number" ? value.toFixed(0) : value.toNumber().toFixed(0));

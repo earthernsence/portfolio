@@ -1,4 +1,4 @@
-import { TimeSpan } from "./TimeSpan"
+import { TimeSpan } from "./TimeSpan";
 
 export default function Time(props: { time: TimeSpan, shortenedTime?: boolean }) {
   const time = props.time;
@@ -8,5 +8,5 @@ export default function Time(props: { time: TimeSpan, shortenedTime?: boolean })
         {props.shortenedTime ? time.toStringShort() : time.toString() }
       </div>
     </div>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { ScientificNotation, formatInt } from "./format";
+import { formatInt, ScientificNotation } from "./format";
 
 const Formatter = new ScientificNotation();
 
@@ -51,7 +51,7 @@ export class TimeSpan {
     return new TimeSpan(value);
   }
 
-  _ms: number
+  _ms: number;
 
   /**
    * @param {Number} ms
@@ -290,7 +290,7 @@ export class TimeSpan {
     }
   }
 
-  // toTimeEstimate() {
+  // ToTimeEstimate() {
   //   const seconds = this.totalSeconds;
   //   if (seconds < 1) return `< ${formatInt(1)} second`;
   //   if (seconds > 86400 * 365.25) return `> ${formatInt(1)} year`;

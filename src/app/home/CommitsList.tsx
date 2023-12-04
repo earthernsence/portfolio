@@ -1,9 +1,9 @@
 "use client";
 
-import { Octokit } from "@octokit/core";
 import { useEffect, useState } from "react";
-import { CommitCard } from "./CommitCard";
 import type { Commit } from "./types";
+import { CommitCard } from "./CommitCard";
+import { Octokit } from "@octokit/core";
 
 export const CommitsList = () => {
   const [recentCommits, setRecentCommits] = useState<Array<Commit>>();
@@ -14,17 +14,18 @@ export const CommitsList = () => {
     // TODO: rewrite with SWR
     const octokit = new Octokit({ auth: process.env.NEXT_PUBLIC_GH_TOKEN });
     const owner = "earthernsence",
-          perPage = 1;
+      perPage = 1;
 
     setHasLoaded(false);
 
-    const fetchUserRepositories = async() => await octokit.request(
+    const fetchUserRepositories = () => octokit.request(
       `GET /users/{username}/repos`, { username: owner, type: "owner", sort: "updated" }
-    ).then((repos) => {
+    ).then(repos => {
       const commitInfo: Array<Commit> = [];
 
       [...repos.data.slice(0, 5)].forEach(repository => {
-        const recentCommit = async() => await octokit.request(
+        const recentCommit = () => octokit.request(
+          // eslint-disable-next-line camelcase
           `GET /repos/{owner}/{repo}/commits`, { owner, repo: repository.name, per_page: perPage }
         ).then(commits => {
           commitInfo.push(...commits.data);
@@ -54,15 +55,15 @@ export const CommitsList = () => {
         <div className="flex flex-col justify-between">
           {
             (hasLoaded && recentCommits)
-            ? recentCommits.map((commit: Commit) => (
-              <CommitCard commit={commit} key={commit.sha} />
-            ))
-            : <div className="text-s text-left text-gray-500">No recent commits to display</div>
+              ? recentCommits.map((commit: Commit) => (
+                <CommitCard commit={commit} key={commit.sha} />
+              ))
+              : <div className="text-s text-left text-gray-500">No recent commits to display</div>
           }
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default CommitsList;

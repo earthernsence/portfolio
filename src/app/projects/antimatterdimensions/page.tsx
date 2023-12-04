@@ -4,14 +4,12 @@ export const metadata: Metadata = {
   title: "Projects: Antimatter Dimensions",
 };
 
-const AntimatterDimensionsPage = () => {
-  return (
-    <>
-      <div className="text-4xl">
+const AntimatterDimensionsPage = () => (
+  <>
+    <div className="text-4xl">
         Antimatter Dimensions
-      </div>
-    </>
-  )
-}
+    </div>
+  </>
+);
 
 export default AntimatterDimensionsPage;

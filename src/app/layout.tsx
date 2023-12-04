@@ -1,10 +1,10 @@
 "use client";
 
-import { Inter } from 'next/font/google'
-import "./globals.css"
-import Header from './Navbar'
+import "./globals.css";
+import Header from "./Navbar";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -18,5 +18,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  )
+  );
 }

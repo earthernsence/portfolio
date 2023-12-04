@@ -10,5 +10,5 @@ export default function TimeCalculator() {
       <TimeList />
       <TimeInputs />
     </main>
-  )
+  );
 }
