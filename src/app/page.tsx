@@ -5,5 +5,4 @@ export const metadata: Metadata = {
   title: "Home",
 };
 
-
 export default HomePage;

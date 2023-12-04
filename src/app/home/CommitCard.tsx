@@ -1,53 +1,6 @@
 import Image from "next/image"
 import URL from "../common/URL"
-
-type User = {
-  name?: string | null | undefined,
-  email?: string | null | undefined,
-  login: string,
-  id: number,
-  node_id: string,
-  avatar_url: string,
-  gravatar_id: string | null,
-  url: string,
-}
-
-type Committer = {
-  name?: string | undefined,
-  email?: string | undefined,
-  date?: string | undefined
-}
-
-type Commit = {
-    url: string,
-    sha: string,
-    node_id: string,
-    html_url: string,
-    comments_url: string,
-    commit: {
-      url: string,
-      author: null | Committer
-      committer: null | Committer
-      message: string,
-      comment_count: number,
-      tree: {
-        sha: string,
-        url: string,
-      },
-      verification?: {
-        verified: boolean,
-        reason: string,
-        payload: string | null,
-        signature: string | null,
-      } | undefined
-    },
-    author?: null | User,
-    committer?: null | User,
-    stats?: {
-      additions?: number | undefined,
-      deletions?: number | undefined,
-    }
-}
+import type { Commit } from "./types";
 
 export const CommitCard = (props: { commit: Commit }) => {
   const commit = props.commit;
@@ -58,6 +11,7 @@ export const CommitCard = (props: { commit: Commit }) => {
       <div className="flex flex-col text-left">
         <div className="flex flex-row text-left place-items-baseline">
           <URL href={commit.html_url} className="text-xs pr-1">{ commit.commit.message }</URL>
+          {/* This URL split takes a URL like https://github.com/earthernsence/ADAnswers-Bot/ and finds the repository name */}
           <div className="text-[9px] text-gray-700">({ commit.html_url.split("/")[4] })</div>
         </div>
         <div className="text-gray-400 text-xs">{ new Date(commit.commit.committer?.date ?? 0).toDateString() }</div>

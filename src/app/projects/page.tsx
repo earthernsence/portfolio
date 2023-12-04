@@ -107,7 +107,7 @@ const SingleProject = (props: { project: Project }) => {
           }
           {
             proj.infoPages
-              ? proj.infoPages.map((page: Page) => <Icon icon={page.icon} link={page.link} key={page.name} /> )
+              ? proj.infoPages.map((page: Page, index: number) => <Icon icon={page.icon} link={page.link} key={index} /> )
               : null
           }
         </div>
@@ -118,13 +118,9 @@ const SingleProject = (props: { project: Project }) => {
 };
 
 const ProjectPage = () => {
-  // useEffect(() => {
-  //   document.title = "Projects";
-  // }, []);
-
   return (
     <>
-      <div className="place-self-center w-full max-w-full pt-0 pb-12 pl-16 pr-16 text-left bg-gradient-to-r from-transparent via-slate-800 to-transparent">
+      <div className="place-self-center w-full max-w-full pt-0 pb-12 pl-16 pr-16 text-left">
       <div className={`c-projects-bg fixed top-0 left-0 bg-cover w-full h-full -z-10`} />
       <div className="text-4xl">Projects</div>
       <div className="text-xl text-left w-full">
@@ -134,7 +130,7 @@ const ProjectPage = () => {
       </div>
       <br />
       <div className="flex flex-row flex-wrap w-full justify-evenly">
-        { Projects.map((project: Project) => <SingleProject project={project} key={project.id} />) }
+        { Projects.map((project: Project, index: number) => <SingleProject project={project} key={index} />) }
       </div>
       </div>
     </>
