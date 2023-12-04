@@ -31,11 +31,12 @@ const Tabs: Array<Tab> = [
 const LinkDropdown = (props: { tab: Tab }) => {
   if (!props.tab.leaves) throw new Error("A LinkDropdown component can only be used with leaves!");
   return (
-    <div className="flex bg-slate-700 transition-all ease-linear duration-300 absolute z-50 min-w-[10rem] p-2 justify-items-center flex-col rounded-md">
+    <div className="flex absolute z-50 min-w-[10rem] p-2 justify-items-center flex-col bg-slate-700
+                    transition-all ease-linear duration-300 rounded-md">
       {
         props.tab.leaves.map((leaf: Tab, index: number) =>
           <Link
-            className="text-white m-1"
+            className="text-white m-1 hover:underline"
             href={leaf.route}
             key={index}
           >

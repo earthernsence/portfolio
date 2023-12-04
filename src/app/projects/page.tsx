@@ -82,10 +82,13 @@ const SingleProject = (props: { project: Project }) => {
 
   return (
     <>
-      <div className="flex flex-col justify-start bg-gray-400 text-black m-1 border-4 border-gray-700 border-solid rounded-2xl w-[calc(50%-2rem)] p-2 min-w-[22rem]">
+      <div className="flex flex-col justify-start m-1 p-2 w-[calc(50%-2rem)] min-w-[22rem]
+                    bg-gray-400 text-black border-4 border-gray-700 border-solid rounded-2xl">
         {
           proj.image
-            ? <Image className="object-contain h-80 mb-4 place-self-center" src={proj.image} alt={`Project image for ${proj.title}`} />
+            ? <Image className="object-contain h-80 mb-4 place-self-center"
+              src={proj.image}
+              alt={`Project image for ${proj.title}`} />
             : null
         }
         <b>{ proj.title }</b>
@@ -100,9 +103,20 @@ const SingleProject = (props: { project: Project }) => {
           {
             proj.route
               ? <Link href={proj.route}>
-                <button className="rounded-lg border-solid border-2 border-transparent pt-2 pb-2 pr-4 pl-4 font-medium text-base font-sans text-black bg-white cursor-pointer transition-[border-color] duration-300 hover:border-slate-600 focus:outline-4 focus:outline focus:outline-blue-950 mr-4">More Information</button>
+                <button className="rounded-lg border-solid border-2 border-transparent
+                                  pt-2 pb-2 pr-4 pl-4 mr-4
+                                  font-medium text-base font-sans text-black bg-white cursor-pointer
+                                  transition-[border-color] duration-300
+                                  hover:border-slate-600
+                                  focus:outline-4 focus:outline focus:outline-blue-950">More Information</button>
               </Link>
-              : <button className="rounded-lg border-solid border-2 border-transparent pt-2 pb-2 pr-4 pl-4 font-medium text-base font-sans text-black bg-white cursor-pointer transition-[border-color] duration-300 hover:border-slate-600 focus:outline-4 focus:outline focus:outline-blue-950 disabled:bg-gray-600 disabled:border-gray-500 mr-4" disabled>Info Unavailable</button>
+              : <button className="rounded-lg border-solid border-2 border-transparent
+                                  pt-2 pb-2 pr-4 pl-4 mr-4
+                                  font-medium text-base font-sans text-black bg-white cursor-pointer
+                                  transition-[border-color] duration-300
+                                  hover:border-slate-600
+                                  focus:outline-4 focus:outline focus:outline-blue-950
+                                  disabled:bg-gray-600 disabled:border-gray-500" disabled>Info Unavailable</button>
           }
           {
             proj.infoPages
