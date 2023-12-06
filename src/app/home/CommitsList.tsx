@@ -1,47 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import type { Commit } from "./types";
 import { CommitCard } from "./CommitCard";
-import { Octokit } from "@octokit/core";
+import { Repository } from "./types";
+import useSWR from "swr";
+
+const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 export const CommitsList = () => {
-  const [recentCommits, setRecentCommits] = useState<Array<Commit>>();
-  const [hasLoaded, setHasLoaded] = useState(false);
+  const { data, error, isLoading } = useSWR(
+    "https://api.github.com/users/earthernsence/repos?sort=updated",
+    fetcher
+  );
 
-  // This might be magic.
-  useEffect(() => {
-    // TODO: rewrite with SWR maybe -- would have to figure out how to find
-    // recent commits w/o loops or conditions somehow
-    const octokit = new Octokit({ auth: process.env.NEXT_PUBLIC_GH_TOKEN });
-    const owner = "earthernsence",
-      perPage = 1;
+  if (error) throw new Error("Could not load repositories list");
+  if (isLoading) return "Loading...";
 
-    setHasLoaded(false);
-
-    const fetchUserRepositories = () => octokit.request(
-      `GET /users/{username}/repos`, { username: owner, type: "owner", sort: "updated" }
-    ).then(repos => {
-      const commitInfo: Array<Commit> = [];
-
-      [...repos.data.slice(0, 5)].forEach(repository => {
-        const recentCommit = () => octokit.request(
-          // eslint-disable-next-line camelcase
-          `GET /repos/{owner}/{repo}/commits`, { owner, repo: repository.name, per_page: perPage }
-        ).then(commits => {
-          commitInfo.push(...commits.data);
-        });
-
-        recentCommit();
-      });
-
-      setRecentCommits(commitInfo);
-
-      return commitInfo;
-    });
-
-    fetchUserRepositories().then(() => setTimeout(() => setHasLoaded(true), 1000));
-  }, []);
+  const repositories: Array<Repository> = data.slice(0, 5);
 
   return (
     <>
@@ -55,9 +29,9 @@ export const CommitsList = () => {
         <br />
         <div className="flex flex-col justify-between">
           {
-            (hasLoaded && recentCommits)
-              ? recentCommits.map((commit: Commit) => (
-                <CommitCard commit={commit} key={commit.sha} />
+            (repositories)
+              ? repositories.map((repository: Repository) => (
+                <CommitCard repository={repository} key={repository.id} />
               ))
               : <div className="text-s text-left text-gray-500">No recent commits to display</div>
           }

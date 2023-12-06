@@ -45,3 +45,9 @@ export type Commit = {
       deletions?: number | undefined,
     }
 }
+
+export type Repository = {
+  id: number,
+  name: string,
+  stargazers_count: number
+}

@@ -12,7 +12,8 @@ const HomePage = () => (
       <br />
       <div className="text-gray-500 text-xs">
         Major thanks to cyip92 and <URL href="https://cyip92.github.io/site">his website</URL> for some
-        code & inspiration!
+        code & inspiration.
+        You can also visit the source of this site <URL href="https://github.com/earthernsence/portfolio">here</URL>!
       </div>
       <br />
       <br />
