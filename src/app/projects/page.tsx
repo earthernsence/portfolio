@@ -134,10 +134,10 @@ const SingleProject = (props: { project: Project }) => {
 
 const ProjectPage = () => (
   <>
-    <div className="place-self-center w-full max-w-full pt-0 pb-12 pl-16 pr-16 text-left">
+    <div className="place-self-center w-full max-w-7xl pt-0 pb-12 pl-16 pr-16 text-left">
       <div className={`c-projects-bg fixed top-0 left-0 bg-cover w-full h-full -z-10`} />
-      <div className="text-4xl">Projects</div>
-      <div className="text-xl text-left w-full">
+      <div className="text-4xl xs:text-center md:text-left">Projects</div>
+      <div className="xs:text-lg md:text-xl xs:text-center md:text-left w-full">
         Here are some projects that I have worked on; some are larger than others.
         <br />
         Some have been completed, but others are projects I still contribute to.

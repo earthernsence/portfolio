@@ -71,8 +71,9 @@ const ExpandableLinkEntry = (props: { tab: Tab }) => {
 export const Header = () => (
   <>
     <header className="flex w-full pt-2 pb-2 pr-4 pl-4">
-      <nav className="flex flex-row place-self-center w-2/4 items-center">
-        <div className="text-center text-3xl text-white mr-4">
+      <nav className="flex flex-row place-self-center items-center
+                      xs:w-full sm:w-3/4 lg:w-2/4">
+        <div className="text-center sm:text-3xl xs:text-xl text-white mr-4">
           <Link href="/">jroyvibes</Link>
         </div>
         <br />

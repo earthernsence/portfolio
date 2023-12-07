@@ -6,8 +6,8 @@ export const metadata: Metadata = {
 
 const AntimatterDimensionsPage = () => (
   <>
-    <div className="place-self-center w-full max-w-7xl pt-0 pb-12 pl-16 pr-16 text-left">
-      <div className="text-4xl underline">Antimatter Dimensions</div>
+    <div className="place-self-center w-full max-w-7xl pt-0 pb-12 pl-16 pr-16 xs:text-left md:text-justify">
+      <div className="text-4xl xs:text-center md:text-left">Antimatter Dimensions</div>
       <br />
       <br />
       Antimatter Dimensions is an idle/incremental game made for web browsers by a Finnish developer, Hevipelle.
