@@ -4,6 +4,8 @@ import Link from "next/link";
 import picture from "../assets/about/picture.jpg";
 import rainier from "../assets/about/washington.png";
 
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Icon from "../common/Icon";
 import { Metadata } from "next";
 import URL from "../common/URL";
 
@@ -64,6 +66,11 @@ const AboutPage = () => (
         <div className="xs:w-full md:w-1/3 p-4">
           <Image src={rainier} className="w-full" alt="Picture from Rainier National Park" />
         </div>
+      </div>
+      <br />
+      <br />
+      <div className="flex flex-row w-full place-items-center justify-center">
+        <Icon className="text-white mr-0" icon={faGithub} link="https://github.com/earthernsence" />
       </div>
     </div>
   </>

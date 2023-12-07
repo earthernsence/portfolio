@@ -20,7 +20,6 @@ export const CommitCard = (props: { repository: Repository }) => {
 
   const commit: Commit = data[0];
 
-
   return (
     <>
       <div className="border-4 border-gray-500 flex rounded-lg flex-row w-full place-items-center p-4 mb-2 md:h-16">
@@ -33,12 +32,12 @@ export const CommitCard = (props: { repository: Repository }) => {
           <div className="flex flex-row text-left place-items-baseline">
             <URL href={commit.html_url} className="text-xs pr-1">{ commit.commit.message }</URL>
             {/*
-          This URL split takes a URL like https://github.com/earthernsence/ADAnswers-Bot/
-          and finds the repository name.
-          We do this here because for some reason trying to collect the repository names
-          in the page.tsx file results in them being rendered out of order sometimes.
-          Doing it like this works for sure and skips all of the nonsense of doing it in page
-          */}
+              This URL split takes a URL like https://github.com/earthernsence/ADAnswers-Bot/
+              and finds the repository name.
+              We do this here because for some reason trying to collect the repository names
+              in the page.tsx file results in them being rendered out of order sometimes.
+              Doing it like this works for sure and skips all of the nonsense of doing it in page
+            */}
             <div className="text-[9px] text-gray-700">({ commit.html_url.split("/")[4] })</div>
           </div>
           <div className="text-gray-400 text-xs">
