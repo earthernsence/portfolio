@@ -41,7 +41,7 @@ export const CommitCard = (props: { repository: Repository }) => {
             <div className="text-[9px] text-gray-700">({ commit.html_url.split("/")[4] })</div>
           </div>
           <div className="text-gray-400 text-xs">
-          Updated on { new Date(commit.commit.committer?.date ?? 0).toDateString() }
+            Updated on { new Date(commit.commit.committer?.date ?? 0).toDateString() }
           </div>
         </div>
       </div>

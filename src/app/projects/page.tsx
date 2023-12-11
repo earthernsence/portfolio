@@ -116,7 +116,9 @@ const SingleProject = (props: { project: Project }) => {
                                   transition-[border-color] duration-300
                                   hover:border-slate-600
                                   focus:outline-4 focus:outline focus:outline-blue-950
-                                  disabled:bg-gray-600 disabled:border-gray-500" disabled>Info Unavailable</button>
+                                  disabled:bg-gray-600 disabled:border-gray-500 disabled:cursor-not-allowed" disabled>
+                                    Info Unavailable
+              </button>
           }
           {
             proj.infoPages
