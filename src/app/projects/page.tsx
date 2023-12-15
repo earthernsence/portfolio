@@ -4,8 +4,8 @@ import "../globals.css";
 import Image from "next/image";
 import Link from "next/link";
 
-import logoAD from "../assets/projects/AD_loading.png";
-import noImg from "../assets/projects/no_image.png";
+import logoAD from "#/projects/AD_loading.png";
+import noImg from "#/projects/no_image.png";
 
 import { faGithub, IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { faGamepad } from "@fortawesome/free-solid-svg-icons";

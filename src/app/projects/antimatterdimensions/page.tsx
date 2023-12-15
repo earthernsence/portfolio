@@ -4,6 +4,12 @@ import Icon from "@/app/common/Icon";
 import { Metadata } from "next";
 import URL from "@/app/common/URL";
 
+import contributions from "#/projects/ad/contribution_chart.png";
+import eternityModal from "#/projects/ad/modal_eternity.png";
+import mainPage from "#/projects/ad/antimatter_dimensions.png";
+
+import Image from "next/image";
+
 export const metadata: Metadata = {
   title: "Projects: Antimatter Dimensions",
 };
@@ -56,15 +62,29 @@ const AntimatterDimensionsPage = () => (
       Challenges update around January 2018 that I joined the testing team.
       <br />
       <br />
-      As I became more involved with the testing team, more content was added to the game, including the Time Dilation
-      update, which was the last update for nearly four years. The extent of my contributions at this point was
-      purely adding to various small things, like the how to play page, and throughout the rest of development
-      it was prevalent for me in some (usually minor) ways. Prior to the Reality Update, the code was entirely
-      written in HTML and JS, with no framework; part of the massive waiting between the Dilation update
-      and the Reality update was the transition to Vue.js. Vue.js made development much faster overall,
-      even for people who had never worked with it before, like me. I found myself looking over more and more
-      facets of the codebase, which led to my desire to be involved in some way. These next four years proved
-      to be some of the most influential in my life, for one reason or another.
+      <div className="relative flex xs:flex-col md:flex-row justify-between items-center w-full">
+        <div className="xs:w-full md:w-2/3">
+          As I became more involved with the testing team, more content was added to the game, including the Time
+          Dilation update, which was the last update for nearly four years. The extent of my contributions at this
+          point was purely adding to various small things, like the how to play page, and throughout the rest of
+          development it was prevalent for me in some (usually minor) ways. Prior to the Reality Update, the code
+          was entirely written in HTML and JS, with no framework; part of the massive waiting between the Dilation
+          update and the Reality update was the transition to Vue.js. Vue.js made development much faster overall,
+          even for people who had never worked with it before, like me. I found myself looking over more and more
+          facets of the codebase, which led to my desire to be involved in some way. These next four years proved
+          to be some of the most influential in my life, for one reason or another.
+        </div>
+        <div className="xs:w-full md:w-1/3 p-4 flex flex-col">
+          <Image
+            src={contributions}
+            className="w-full border-gray-700 border-2"
+            alt="Image of my personal contributions to the AD codebase"
+          />
+          <div className="text-xs text-gray-500 opacity-80 pt-2">
+            My contribution chart on the AD repository
+          </div>
+        </div>
+      </div>
       <br />
       <br />
       From the release of the Dilation update in June 2018 to around August of the same year, details of
@@ -79,19 +99,33 @@ const AntimatterDimensionsPage = () => (
       testing the Reality Update.
       <br />
       <br />
-      The scope of my contributions at this point was still extremely limited, which, considering my experience
-      with web development (and more specifically game development) at that time, wasn&apos;t too surprising.
-      After a while, though, I found myself working on some pretty minor things, most of which didn&apos;t require
-      too much experience (or wasn&apos;t something I could learn by looking at other code). By 2020, I was starting
-      to contribute more to the game in some really small ways. One of the major things I worked on throughout the
-      project was the addition of information and confirmation modals. These were what kept me working on the game,
-      as pretty much any new feature was bound to come with a new confirmation modal that needed to be made.
-      I semi-garnered a reputation as the modal-maker guy after a while (which stuck all the way through until the
-      release of the update), and I felt like I had finally found something I could do, which was an amazing feeling.
-      As time went on, and the desire to fully Vueify the codebase grew among developers, I also participated in
-      migrating the main UI over to Vue along with my fellow developers. Throughout this time, the main portion of
-      my contributions were small or minor quality of life changes or wording improvements. But what I did know is that
-      this was something I <i>did</i> enjoy doing, even if the scale of what I did was small.
+      <div className="relative flex xs:flex-col md:flex-row justify-between items-center w-full">
+        <div className="xs:w-full md:w-1/3 p-4 flex flex-col">
+          <Image
+            src={eternityModal}
+            className="w-full border-gray-700 border-2"
+            alt="Image of an example Eternity reset modal from AD"
+          />
+          <div className="text-xs text-gray-500 opacity-80 pt-2">
+            An example Eternity reset modal, something I worked on
+          </div>
+        </div>
+        <div className="xs:w-full md:w-2/3">
+        The scope of my contributions at this point was still extremely limited, which, considering my experience
+        with web development (and more specifically game development) at that time, wasn&apos;t too surprising.
+        After a while, though, I found myself working on some pretty minor things, most of which didn&apos;t require
+        too much experience (or wasn&apos;t something I could learn by looking at other code). By 2020, I was starting
+        to contribute more to the game in some really small ways. One of the major things I worked on throughout the
+        project was the addition of information and confirmation modals. These were what kept me working on the game,
+        as pretty much any new feature was bound to come with a new confirmation modal that needed to be made.
+        I semi-garnered a reputation as the modal-maker guy after a while (which stuck all the way through until the
+        release of the update), and I felt like I had finally found something I could do, which was an amazing feeling.
+        As time went on, and the desire to fully Vueify the codebase grew among developers, I also participated in
+        migrating the main UI over to Vue along with my fellow developers. Throughout this time, the main portion of
+        my contributions were small or minor quality of life changes or wording improvements. But what I did know is
+        that this was something I <i>did</i> enjoy doing, even if the scale of what I did was small.
+        </div>
+      </div>
       <br />
       <br />
       I am eternally grateful for the opportunities that I gained from AD and the people I have met while working
@@ -100,6 +134,17 @@ const AntimatterDimensionsPage = () => (
       like-minded folks.
       <br />
       <br />
+      <div className="relative flex flex-col items-center w-full">
+        <Image
+          src={mainPage}
+          className="w-full border-gray-700 border-2"
+          alt="Screenshot of the Antimatter Dimensions tab"
+        />
+        <div className="text-xs text-gray-500 opacity-80 pt-2 pb-2">
+          Screenshot of the Antimatter Dimensions tab. This game changed my life, and I&apos;m so glad I got
+          to experience it with the people I did.
+        </div>
+      </div>
       <div className="flex flex-row w-full place-items-center justify-center">
         <Icon className="text-white mr-0 mb-0" icon={faGithub}
           link="https://github.com/IvarK/AntimatterDimensionsSourceCode" />

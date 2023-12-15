@@ -25,7 +25,7 @@ export const CommitCard = (props: { repository: Repository }) => {
       <div className="border-4 border-gray-500 flex rounded-lg flex-row w-full place-items-center p-4 mb-2 md:h-16">
         <Image
           className="flex border-gray-300 rounded-full border-2 h-12 w-12 mr-4"
-          src={commit.author?.avatar_url ?? "../assets/projects/no_image.png"}
+          src={commit.author?.avatar_url ?? "#/projects/no_image.png"}
           alt="Github avatar" width={50} height={50}
         />
         <div className="flex flex-col text-left">

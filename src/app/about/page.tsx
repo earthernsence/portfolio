@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import picture from "../assets/about/picture.jpg";
-import rainier from "../assets/about/washington.png";
+import picture from "#/about/picture.jpg";
+import rainier from "#/about/washington.png";
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Icon from "../common/Icon";
