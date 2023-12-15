@@ -19,7 +19,10 @@ const AboutPage = () => (
       <div className="text-4xl xs:text-center md:text-left">About me</div>
       <div className="relative flex xs:flex-col md:flex-row justify-between items-center w-full">
         <div className="xs:w-full md:w-1/3 p-4">
-          <Image src={picture} className="w-full" alt="Picture of yours truly" />
+          <Image src={picture} className="w-full border-gray-700 border-2" alt="Picture of yours truly" />
+          <div className="text-xs text-gray-500 opacity-80 pt-2">
+            Me. I did cut the hair recently.
+          </div>
         </div>
         <div className="xs:w-full md:w-2/3">
           Hello! My name is Jace Royer, and I am currently a high school student in the St. Louis area.
@@ -64,7 +67,10 @@ const AboutPage = () => (
           I enjoy travelling and love Washington and Maine.
         </div>
         <div className="xs:w-full md:w-1/3 p-4">
-          <Image src={rainier} className="w-full" alt="Picture from Rainier National Park" />
+          <Image src={rainier} className="w-full border-gray-700 border-2" alt="Picture from Rainier National Park" />
+          <div className="text-xs text-gray-500 opacity-80 pt-2">
+            Picture from Rainier National Park. Would love to go back
+          </div>
         </div>
       </div>
       <br />
