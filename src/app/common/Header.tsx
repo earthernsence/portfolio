@@ -24,6 +24,10 @@ const Tabs: Array<Tab> = [
         route: "/projects/antimatterdimensions/",
         text: "Antimatter Dimensions"
       },
+      {
+        route: "/projects/other",
+        text: "Other Projects"
+      }
     ]
   }
 ];
@@ -32,7 +36,7 @@ const LinkDropdown = (props: { tab: Tab }) => {
   if (!props.tab.leaves) throw new Error("A LinkDropdown component can only be used with leaves!");
   return (
     <div className="flex absolute z-50 min-w-[10rem] p-2 justify-items-center flex-col bg-slate-700
-                    transition-all ease-linear duration-300 rounded-md">
+                    transition-all ease-linear duration-300 rounded-md text-left">
       {
         props.tab.leaves.map((leaf: Tab, index: number) =>
           <Link
