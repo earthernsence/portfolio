@@ -40,7 +40,7 @@ const LinkDropdown = (props: { tab: Tab }) => {
       {
         props.tab.leaves.map((leaf: Tab, index: number) =>
           <Link
-            className="text-white m-1 hover:underline"
+            className="text-white opacity-70 m-1 hover:opacity-100 hover:underline"
             href={leaf.route}
             key={index}
           >
@@ -60,7 +60,7 @@ const ExpandableLinkEntry = (props: { tab: Tab }) => {
 
   return (
     <Link
-      className="text-white underline items-center"
+      className="text-white opacity-60 items-center hover:underline hover:opacity-100"
       href={tab.route}
       key={tab.text}
       onMouseEnter={() => setDropdownVisible(true)}
@@ -86,7 +86,7 @@ export const Header = () => (
             Tabs.filter(tab => tab.text !== "Home").map((tab: Tab, index: number) => (tab.leaves
               ? <ExpandableLinkEntry tab={tab} key={index} />
               : <Link
-                className="text-white underline"
+                className="text-white opacity-60 hover:underline hover:opacity-100"
                 href={tab.route}
                 key={index}
               >

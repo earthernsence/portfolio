@@ -75,6 +75,17 @@ const Projects: Array<Project> = [
       }
     ]
   },
+  {
+    id: "capstone",
+    image: noImg,
+    title: "Various Projects",
+    category: "Experience",
+    date: "August 2023 to present",
+    fields: "HTML, CSS, JS, Svelte, React+Next.js",
+    description: `One of my classes allows me to work on various projects to gain experience in web development
+      or, more broadly, development, following (vaguely) along with the Odin Project.`,
+    route: "/projects/other/"
+  }
 ];
 
 const SingleProject = (props: { project: Project }) => {
