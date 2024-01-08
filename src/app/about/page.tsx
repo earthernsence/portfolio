@@ -4,7 +4,9 @@ import Link from "next/link";
 import picture from "#/about/picture.jpg";
 import rainier from "#/about/washington.png";
 
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faDiscord, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faSquareEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Icon from "../common/Icon";
 import { Metadata } from "next";
 import URL from "../common/URL";
@@ -75,6 +77,36 @@ const AboutPage = () => (
       </div>
       <br />
       <br />
+      <div className="text-xl underline">Freelancing</div>
+      <br />
+      As a young developer, one of the best things I can do is continue to develop. My passion for this and
+      helping out the people around me runs deep, and I would love to have the opportunity to help others
+      with their outreach. I am fairly flexible but I also am still managing a high school student&apos;s schedule,
+      so my time is occasionally limited. I am able to create projects with a variety of tools like React+Next.js or
+      Svelte, whichever suits your needs better. The great thing about working with an actual developer instead of
+      a service like Wix or Squarespace is that I&apos;m able to adjust to your specific needs and create a full
+      and powerful website to fulfill your needs. And it won&apos;t be nearly as bland looking as this website.
+      All you have to do is provide a place to host it. Availability and pricing are discussed on a per-project basis.
+      <br />
+      <br />
+      You can contact me on one of the following:
+      <br />
+      <div className="flex flex-col text-white">
+        <div className="flex flex-row items-center">
+          {/* Here at jroyvibes industries, we hate email scrapers */}
+          <FontAwesomeIcon icon={faSquareEnvelope} width={32} height={32} className="mr-4 h-8 w-8" />
+          jt<span className="hidden">null</span>man20<span className="hidden">null</span>
+          25@gma<span className="hidden">null</span>il.com
+        </div>
+        <div className="flex flex-row items-center">
+          <FontAwesomeIcon icon={faDiscord} width={32} height={32} className="mr-4 h-8 w-8" />
+          @earth1337_
+        </div>
+        <div className="flex flex-row items-center">
+          <FontAwesomeIcon icon={faGithub} width={32} height={32} className="mr-4 h-8 w-8" />
+          earthernsence
+        </div>
+      </div>
       <div className="flex flex-row w-full place-items-center justify-center">
         <Icon className="text-white mr-0" icon={faGithub} link="https://github.com/earthernsence" />
       </div>
