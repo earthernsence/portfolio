@@ -5,6 +5,7 @@ import { faGamepad, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Icon from "@/app/common/Icon";
 
+import cv from "#/projects/small/cv.png";
 import etch from "#/projects/small/etch.png";
 import Image from "next/image";
 
@@ -43,6 +44,25 @@ const projects: Array<SmallProject> = [
       {
         name: "play",
         link: "https://earthernsence.github.io/etch-a-sketch-svelte/",
+        icon: faGamepad
+      }
+    ]
+  },
+  {
+    id: "cv",
+    name: "CV Creator",
+    languages: "HTML/CSS/JS w/ React framework",
+    description: "A basic project to demonstrate ability in state & props in the React framework.",
+    image: cv,
+    infoPages: [
+      {
+        name: "gh",
+        link: "https://github.com/earthernsence/cv-application",
+        icon: faGithub
+      },
+      {
+        name: "play",
+        link: "https://cv-creator-lemon.vercel.app/",
         icon: faGamepad
       }
     ]
