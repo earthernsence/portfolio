@@ -2,9 +2,9 @@ import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 import { TimeSpan } from "./TimeSpan";
 
 export default function TimeInputs(props: { times: Array<TimeSpan>, setTimes: Dispatch<SetStateAction<Array<TimeSpan>>> }) {
-  const [inputTextHours, setInputTextHours] = useState("");
-  const [inputTextMinutes, setInputTextMinutes] = useState("");
-  const [inputTextSeconds, setInputTextSeconds] = useState("");
+  const [inputTextHours, setInputTextHours] = useState("0");
+  const [inputTextMinutes, setInputTextMinutes] = useState("0");
+  const [inputTextSeconds, setInputTextSeconds] = useState("0");
 
   const setters: { [key: string]: Dispatch<SetStateAction<string>> } = {
     "hours": setInputTextHours,
@@ -21,6 +21,7 @@ export default function TimeInputs(props: { times: Array<TimeSpan>, setTimes: Di
     .plus(TimeSpan.fromSeconds(parseInt(inputTextSeconds, 10)));
 
   function addTime(time: TimeSpan) {
+    if (time._ms === 0) return;
     props.setTimes([ ...props.times, time]);
   } 
 
