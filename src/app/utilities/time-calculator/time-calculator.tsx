@@ -6,9 +6,6 @@ import { useState } from "react";
 import { TimeSpan } from "./TimeSpan";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Utilities: Time Calculator"
-};
 
 export default function TimeCalculator() {
   const [times, setTimes] = useState([] as Array<TimeSpan>);

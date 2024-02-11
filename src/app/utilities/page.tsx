@@ -5,6 +5,11 @@ import Image from "next/image";
 import tc from "#/projects/small/tc.png";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Icon from "../common/Icon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Utilities",
+};
 
 type Page = {
   name: string;
@@ -34,7 +39,7 @@ const utilities: Array<Utility> = [
       },
       {
         name: "play",
-        link: "https://jroyvibes.vercel.app/utilities/time-calculator",
+        link: "/utilities/time-calculator/",
         icon: faGamepad
       }
     ]
