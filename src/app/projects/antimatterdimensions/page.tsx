@@ -4,9 +4,9 @@ import Icon from "@/app/common/Icon";
 import { Metadata } from "next";
 import URL from "@/app/common/URL";
 
-import contributions from "#/projects/ad/contribution_chart.png";
-import eternityModal from "#/projects/ad/modal_eternity.png";
-import mainPage from "#/projects/ad/antimatter_dimensions.png";
+import contributions from "../../assets/projects/ad/contribution_chart.png";
+import eternityModal from "../../assets/projects/ad/modal_eternity.png";
+import mainPage from "../../assets/projects/ad/antimatter_dimensions.png";
 
 import Image from "next/image";
 
@@ -139,6 +139,7 @@ const AntimatterDimensionsPage = () => (
           src={mainPage}
           className="w-full border-gray-700 border-2"
           alt="Screenshot of the Antimatter Dimensions tab"
+          width={1920}
         />
         <div className="text-xs text-gray-500 opacity-80 pt-2 pb-2">
           Screenshot of the Antimatter Dimensions tab. This game changed my life, and I&apos;m so glad I got

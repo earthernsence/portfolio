@@ -27,6 +27,10 @@ const Tabs: Array<Tab> = [
       {
         route: "/projects/other",
         text: "Other Projects"
+      },
+      {
+        route: "/utilities/",
+        text: "Utilities"
       }
     ]
   }

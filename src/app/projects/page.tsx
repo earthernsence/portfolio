@@ -83,6 +83,17 @@ const Projects: Array<Project> = [
     description: `One of my classes allows me to work on various projects to gain experience in web development
       or, more broadly, development, following (vaguely) along with the Odin Project.`,
     route: "/projects/other/"
+  },
+  {
+    id: "qol",
+    image: noImg,
+    title: "Utilities",
+    category: "Experience",
+    date: "February 2024 to present",
+    fields: "React",
+    description: `There are a few things I've made to improve my personal quality-of-life. 
+    I get annoyed pretty easily and am tired of not being able to do things quickly.`,
+    route: "/utilities/"
   }
 ];
 
