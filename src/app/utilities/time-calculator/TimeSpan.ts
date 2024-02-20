@@ -310,7 +310,7 @@ export class TimeSpan {
   }
 };
 
-const Guard = {
+export const Guard = {
   isDefined(value: unknown, message?: string) {
     if (value !== undefined) return;
     if (message) throw message;

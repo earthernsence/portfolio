@@ -16,14 +16,20 @@ export default function TimeInputs(props: { times: Array<TimeSpan>, setTimes: Di
     setters[type](event.target.value);
   };
 
-  const getCurrentTimeSpan = () => TimeSpan.fromHours(parseInt(inputTextHours, 10))
-    .plus(TimeSpan.fromMinutes(parseInt(inputTextMinutes, 10)))
-    .plus(TimeSpan.fromSeconds(parseInt(inputTextSeconds, 10)));
+  const protect = (value: string) => parseInt(value === "" ? "0" : value, 10);
+
+  const getCurrentTimeSpan = () => TimeSpan.fromHours(protect(inputTextHours))
+    .plus(TimeSpan.fromMinutes(protect(inputTextMinutes)))
+    .plus(TimeSpan.fromSeconds(protect(inputTextSeconds)));
 
   function addTime(time: TimeSpan) {
     if (time._ms === 0) return;
     props.setTimes([ ...props.times, time]);
-  } 
+  }
+
+  function clearTimes() {
+    props.setTimes([]);
+  }
 
   return (
     <div className="flex flex-col">
@@ -66,13 +72,20 @@ export default function TimeInputs(props: { times: Array<TimeSpan>, setTimes: Di
         </div>
       </div>
       <br />
-      <div className="flex content-center justify-center">
+      <div className="flex flex-row justify-between content-center">
         <button
           type="button"
           onClick={() => addTime(getCurrentTimeSpan())}
           className="bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded text-xs"
         >
           Add time...
+        </button>
+        <button
+          type="button"
+          onClick={() => clearTimes()}
+          className="bg-red-500 hover:bg-red-700 text-white font-medium py-2 px-4 rounded text-xs"
+        >
+          Clear times...
         </button>
       </div>
     </div>
