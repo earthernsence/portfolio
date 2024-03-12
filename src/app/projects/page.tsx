@@ -94,6 +94,29 @@ const Projects: Array<Project> = [
     description: `There are a few things I've made to improve my personal quality-of-life. 
     I get annoyed pretty easily and am tired of not being able to do things quickly.`,
     route: "/utilities/"
+  },
+  {
+    id: "brainlet",
+    image: noImg,
+    title: "Brainlet",
+    category: "Experience",
+    date: "February 2024 to present",
+    fields: "React + Next.js, with Convex/Edgestore",
+    description: `In my computer science class, we were asked to recreate a popular application
+    as a final project. Me and a team of two other developers co-created Brainlet, a full-stack
+    note-taking application based on Notion.`,
+    infoPages: [
+      {
+        name: "gh",
+        link: "https://github.com/earthernsence/brainlet",
+        icon: faGithub
+      },
+      {
+        name: "play",
+        link: "https://brainlet-rho.vercel.app",
+        icon: faGamepad
+      }
+    ]
   }
 ];
 
