@@ -1,7 +1,6 @@
 import Decimal from "break_infinity.js";
 import type { DecimalSource } from "break_infinity.js";
 
-
 abstract class Notation {
   public abstract get name(): string;
 

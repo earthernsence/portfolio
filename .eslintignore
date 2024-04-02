@@ -1,2 +1,2 @@
 # I plan on coming back to this later, but for now I think it's okay to do this
-/src/app/utilities/**
+/src/app/utilities/time-calculator/format.ts
