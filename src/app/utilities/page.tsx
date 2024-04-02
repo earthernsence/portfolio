@@ -1,11 +1,11 @@
-import { IconDefinition, faGamepad } from "@fortawesome/free-solid-svg-icons";
-import { StaticImageData } from "next/image"
-import Image from "next/image";
+import { faGamepad, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import Image, { StaticImageData } from "next/image";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { Metadata } from "next";
+
+import Icon from "../common/Icon";
 
 import tc from "#/projects/small/tc.png";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import Icon from "../common/Icon";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Utilities",
@@ -29,7 +29,7 @@ const utilities: Array<Utility> = [
   {
     id: "tc",
     name: "Time Calculator",
-    description: "I got really annoyed with having to go to Wolfram-Alpha to add together lengths of time, so I made this.",
+    description: `I got really annoyed with having to go to Wolfram-Alpha to add together lengths of time.`,
     image: tc,
     links: [
       {
@@ -73,24 +73,24 @@ const SingleProject = (props: { utility: Utility }) => (
 export default function UtilitiesPage() {
   return (
     <>
-    <div className="place-self-center w-full max-w-7xl pt-0 pb-12 pl-16 pr-16 xs:text-left md:text-justify">
-      <div className="text-4xl xs:text-center md:text-left">Utilities</div>
-      <br />
-      There are a few things I've made to improve my personal quality-of-life. I get annoyed pretty easily
+      <div className="place-self-center w-full max-w-7xl pt-0 pb-12 pl-16 pr-16 xs:text-left md:text-justify">
+        <div className="text-4xl xs:text-center md:text-left">Utilities</div>
+        <br />
+      There are a few things I&apos;ve made to improve my personal quality-of-life. I get annoyed pretty easily
       and am tired of not being able to do things quickly. As with any other project like this, it usually takes
       about an hour to be able to save me thirty seconds.
-      <br />
-      <br />
-      <div className="text-xl underline">List of utilities</div>
-      <br />
-      <div className="flex flex-col items-center">
-        {
-          utilities.map((utility: Utility, index: number) =>
-            <SingleProject utility={utility} key={index} />
-          )
-        }
+        <br />
+        <br />
+        <div className="text-xl underline">List of utilities</div>
+        <br />
+        <div className="flex flex-col items-center">
+          {
+            utilities.map((utility: Utility, index: number) =>
+              <SingleProject utility={utility} key={index} />
+            )
+          }
+        </div>
       </div>
-    </div>
-  </>
-  )
+    </>
+  );
 }
