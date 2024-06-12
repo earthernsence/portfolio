@@ -2,6 +2,7 @@ import "../globals.css";
 import Image from "next/image";
 import Link from "next/link";
 
+import gy from "#/projects/golden_years_logo.png";
 import logoAD from "#/projects/AD_loading.png";
 import noImg from "#/projects/no_image.png";
 
@@ -74,28 +75,6 @@ const Projects: Array<Project> = [
     ]
   },
   {
-    id: "capstone",
-    image: noImg,
-    title: "Various Projects",
-    category: "Experience",
-    date: "August 2023 to present",
-    fields: "HTML, CSS, JS, Svelte, React+Next.js",
-    description: `One of my classes allows me to work on various projects to gain experience in web development
-      or, more broadly, development, following (vaguely) along with the Odin Project.`,
-    route: "/projects/other/"
-  },
-  {
-    id: "qol",
-    image: noImg,
-    title: "Utilities",
-    category: "Experience",
-    date: "February 2024 to present",
-    fields: "React",
-    description: `There are a few things I've made to improve my personal quality-of-life. 
-    I get annoyed pretty easily and am tired of not being able to do things quickly.`,
-    route: "/utilities/"
-  },
-  {
     id: "brainlet",
     image: noImg,
     title: "Brainlet",
@@ -117,7 +96,47 @@ const Projects: Array<Project> = [
         icon: faGamepad
       }
     ]
-  }
+  },
+  {
+    id: "gy",
+    image: gy,
+    title: "Golden Years",
+    category: "Extracuriccular",
+    date: "April 2024 to present",
+    fields: "Full-Stack Web Development",
+    description: `Golden Years is a club started by a close friend of mine aimed at creating volunteer opportunities
+    for students in memory care centres around the St. Louis area. As a member of the club, I was asked to create a
+    website that could be used for several purposes in the club.`,
+    infoPages: [
+      {
+        name: "play",
+        link: "https://golden-years.vercel.app",
+        icon: faGamepad
+      }
+    ]
+  },
+  {
+    id: "capstone",
+    image: noImg,
+    title: "Various Projects",
+    category: "Experience",
+    date: "August 2023 to present",
+    fields: "HTML, CSS, JS, Svelte, React+Next.js",
+    description: `One of my classes allows me to work on various projects to gain experience in web development
+      or, more broadly, development, following (vaguely) along with the Odin Project.`,
+    route: "/projects/other/"
+  },
+  {
+    id: "qol",
+    image: noImg,
+    title: "Utilities",
+    category: "Experience",
+    date: "February 2024 to present",
+    fields: "React",
+    description: `There are a few things I've made to improve my personal quality-of-life. 
+    I get annoyed pretty easily and am tired of not being able to do things quickly.`,
+    route: "/utilities/"
+  },
 ];
 
 const SingleProject = (props: { project: Project }) => {
