@@ -109,10 +109,15 @@ const Projects: Array<Project> = [
     website that could be used for several purposes in the club.`,
     infoPages: [
       {
+        name: "gh",
+        link: "https://github.com/earthernsence/golden-years",
+        icon: faGithub,
+      },
+      {
         name: "play",
         link: "https://golden-years.vercel.app",
         icon: faGamepad
-      }
+      },
     ]
   },
   {
