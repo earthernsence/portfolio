@@ -103,7 +103,7 @@ const Projects: Array<Project> = [
     title: "Golden Years",
     category: "Extracuriccular",
     date: "April 2024 to present",
-    fields: "Full-Stack Web Development",
+    fields: "Full-Stack Web Development w/ Next.js",
     description: `Golden Years is a club started by a close friend of mine aimed at creating volunteer opportunities
     for students in memory care centres around the St. Louis area. As a member of the club, I was asked to create a
     website that could be used for several purposes in the club.`,

@@ -19,7 +19,7 @@ const AntimatterDimensionsPage = () => (
     <div className="place-self-center w-full max-w-7xl pt-0 pb-12 pl-16 pr-16 xs:text-left md:text-justify">
       <div className="text-4xl xs:text-center md:text-left">Antimatter Dimensions</div>
       <div className="text-xs text-gray-300 xs:text-center md:text-left">
-        My buddy SpectralFlame is writing a full-length
+        My buddy SpectralFlame wrote a full-length
         retrospective which you can find <URL href="https://cyip92.github.io/site/#/ADdevlog/">here</URL>!
       </div>
       <br />

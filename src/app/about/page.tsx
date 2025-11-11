@@ -27,7 +27,9 @@ const AboutPage = () => (
           </div>
         </div>
         <div className="xs:w-full md:w-2/3">
-          Hello! My name is Jace Royer, and I am currently a high school student in the St. Louis area.
+          Hello! My name is Jace Royer, and I am a current college student in Missouri, majoring
+          in data science with an emphasis in computer science. I am also anticipate exploring the
+          fields of education, meteorology, and sports analytics over the course of my degree.
           Computer science, and along with it, web development, has long been a passion of mine and something
           intend to go into in the future. A lot of it is rooted in my exposure to web-based game development
           where I worked with a team of developers to create <Link
@@ -51,13 +53,20 @@ const AboutPage = () => (
       Discord server across the world. Initially written in Javascript with the <URL href="https://discord.js.org/">
         discord.js</URL> framework, I rewrote the bot in Typescript.
       I consider the bot to be one of my greatest accomplishments and am ecstatic that it has been able to impact
-      such a wide variety of people.
+      such a wide variety of people. I continue to work on the ADAnswersBot project as I find the time, working on
+      making it much more community-accessible to hopefully make it far easier for new contributors to work on.
       <br />
       <br />
       I have taken various coding/CS related classes during my time in high school,
-      which I attribute my growing desire to work in the field to. I am particularly fond of data science and
-      analytics and would love to major in it. One of my biggest dreams is to work data analytics
-      for a Major League Baseball team.
+      which I attribute my growing desire to work in the field to, including working on
+      a full year-long capstone project with a team of engineers. We created a system to automatically
+      monitor plant health in gardens and flowerbeds, which was an excellent experience in terms of
+      the engineering process and presentation.
+      These days, I have continued to take relevant coursework in college, learning different skills
+      in other languages along the way.
+      I am interested in research pertaining to the use of data science methods and predictive models for
+      meteorology, but I have also taken an interest in education, as I would love to be able to share my
+      love for mathematics & computer science with the next generation.
       <br />
       <br />
       <div className="relative flex xs:flex-col md:flex-row justify-between items-center w-full">
@@ -66,7 +75,9 @@ const AboutPage = () => (
           I grew up a St. Louis sports fan and eventually found my way to Seattle-area sports thanks to <URL
             href="https://www.youtube.com/watch?v=TIgK56cAjfY"> an excellent documentary</URL>.
           I am a big baseball and hockey fan, and follow the Seattle Mariners and Kraken who are my favourite teams.
-          I enjoy travelling and love Washington and Maine.
+          I enjoy travelling and love Washington and Maine. Much of my free time is spent either playing nostalgic
+          video games or watching mid-week college football. I am currently a mathematics tutor for a private company,
+          which has been nothing short of an incredibly joyful experience.
         </div>
         <div className="xs:w-full md:w-1/3 p-4">
           <Image src={rainier} className="w-full border-gray-700 border-2" alt="Picture from Rainier National Park" />

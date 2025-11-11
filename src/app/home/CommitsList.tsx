@@ -27,6 +27,7 @@ export const CommitsList = () => {
           this shows my 5 most recently updated repositories and their most recent commit
         </div>
         <br />
+        <br />
         <div className="flex flex-col justify-between">
           {
             (repositories)

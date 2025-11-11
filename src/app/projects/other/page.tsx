@@ -101,7 +101,7 @@ const OtherProjectsPage = () => (
       <br />
       I have worked on some projects that don&apos;t necessarily fit in other places. These tend to be
       small, and mostly for the sake of gaining experience in languages that I may not be 100% confident in.
-      Many of these come from <URL href="https://www.theodinproject.com/">the Odin Project</URL>, which is used
+      Many of these come from <URL href="https://www.theodinproject.com/">the Odin Project</URL>, which was used
       in one of my classes to teach full-stack web development.
       <br />
       <br />
