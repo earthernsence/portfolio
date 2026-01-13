@@ -9,7 +9,9 @@ abstract class Notation {
   }
 
   public format(
-    value: DecimalSource, places: number = 0, placesUnder1000: number = 0,
+    value: DecimalSource,
+    places: number = 0,
+    placesUnder1000: number = 0,
     placesExponent: number = places
   ): string {
     if (typeof value === "number" && !Number.isFinite(value)) {
@@ -61,8 +63,9 @@ abstract class Notation {
   public abstract formatDecimal(value: Decimal, places: number, placesExponent: number): string;
 
   protected formatExponent(
-    exponent: number, precision: number = 3,
-    specialFormat: (n: number, p: number) => string = ((n, _) => n.toString()),
+    exponent: number,
+    precision: number = 3,
+    specialFormat: (n: number, p: number) => string = (n, _) => n.toString(),
     largeExponentPrecision: number = Math.max(2, precision)
   ): string {
     return specialFormat(exponent, Math.max(precision, 1));
@@ -77,12 +80,16 @@ export function isExponentFullyShown(exponent: number): boolean {
 // 9.999e99999 with a 100000 exponent threshold; formatting the mantissa rounds and pushes the exponent
 // to the threshold, meaning in some cases that the exponent will have its own exponent and that we don't
 // want to show the mantissa.
-export function formatMantissaWithExponent(mantissaFormatting: (n: number, precision: number) => string,
-  exponentFormatting: (n: number, precision: number) => string, base: number, steps: number,
+export function formatMantissaWithExponent(
+  mantissaFormatting: (n: number, precision: number) => string,
+  exponentFormatting: (n: number, precision: number) => string,
+  base: number,
+  steps: number,
   mantissaFormattingIfExponentIsFormatted?: (n: number, precision: number) => string,
-  separator: string = "e", forcePositiveExponent: boolean = false):
-((n: Decimal, precision: number, precisionExponent: number) => string) {
-  return function(n: Decimal, precision: number, precisionExponent: number): string {
+  separator: string = "e",
+  forcePositiveExponent: boolean = false
+): (n: Decimal, precision: number, precisionExponent: number) => string {
+  return function (n: Decimal, precision: number, precisionExponent: number): string {
     const realBase = base ** steps;
     let exponent = Math.floor(n.log(realBase)) * steps;
     if (forcePositiveExponent) {
@@ -139,8 +146,8 @@ export class ScientificNotation extends Notation {
   }
 
   public formatDecimal(value: Decimal, places: number, placesExponent: number): string {
-    return formatMantissaWithExponent(formatMantissaBaseTen, this.formatExponent.bind(this),
-      10, 1, (x, _) => formatMantissaBaseTen(x, 0)
+    return formatMantissaWithExponent(formatMantissaBaseTen, this.formatExponent.bind(this), 10, 1, (x, _) =>
+      formatMantissaBaseTen(x, 0)
     )(value, places, placesExponent);
   }
 }
@@ -152,4 +159,5 @@ export const formatWithCommas = function formatWithCommas(value: string) {
   return decimalPointSplit.join(".");
 };
 
-export const formatInt = (value: number | Decimal) => formatWithCommas(typeof value === "number" ? value.toFixed(0) : value.toNumber().toFixed(0));
+export const formatInt = (value: number | Decimal) =>
+  formatWithCommas(typeof value === "number" ? value.toFixed(0) : value.toNumber().toFixed(0));

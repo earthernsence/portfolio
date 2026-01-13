@@ -2,14 +2,11 @@ import { ChangeEvent, Dispatch, KeyboardEvent, SetStateAction, useState } from "
 import { TimeSpan } from "./TimeSpan";
 
 interface TimeInputsProps {
-  times: Array<TimeSpan>,
-  setTimes: Dispatch<SetStateAction<Array<TimeSpan>>>
+  times: Array<TimeSpan>;
+  setTimes: Dispatch<SetStateAction<Array<TimeSpan>>>;
 }
 
-export default function TimeInputs({
-  times,
-  setTimes
-}: TimeInputsProps) {
+export default function TimeInputs({ times, setTimes }: TimeInputsProps) {
   const [inputTextHours, setInputTextHours] = useState("0");
   const [inputTextMinutes, setInputTextMinutes] = useState("0");
   const [inputTextSeconds, setInputTextSeconds] = useState("0");
@@ -21,9 +18,9 @@ export default function TimeInputs({
   };
 
   const setters: { [key: string]: Dispatch<SetStateAction<string>> } = {
-    "hours": setInputTextHours,
-    "minutes": setInputTextMinutes,
-    "seconds": setInputTextSeconds
+    hours: setInputTextHours,
+    minutes: setInputTextMinutes,
+    seconds: setInputTextSeconds
   };
 
   const getChangeHandler = (type: string) => (event: ChangeEvent<HTMLInputElement>) => {
@@ -32,9 +29,10 @@ export default function TimeInputs({
 
   const protect = (value: string) => parseInt(value === "" ? "0" : value, 10);
 
-  const getCurrentTimeSpan = () => TimeSpan.fromHours(protect(inputTextHours))
-    .plus(TimeSpan.fromMinutes(protect(inputTextMinutes)))
-    .plus(TimeSpan.fromSeconds(protect(inputTextSeconds)));
+  const getCurrentTimeSpan = () =>
+    TimeSpan.fromHours(protect(inputTextHours))
+      .plus(TimeSpan.fromMinutes(protect(inputTextMinutes)))
+      .plus(TimeSpan.fromSeconds(protect(inputTextSeconds)));
 
   function addTime(time: TimeSpan) {
     if (time._ms === 0) return;
@@ -64,7 +62,7 @@ export default function TimeInputs({
             max="23"
             placeholder="hours"
             className="text-black"
-            onChange={event => getChangeHandler("hours")(event) }
+            onChange={event => getChangeHandler("hours")(event)}
             onKeyDown={event => enterPress(event)}
           />
           <div className="flex text-xs pl-4 pr-4">hours</div>
@@ -78,7 +76,7 @@ export default function TimeInputs({
             max="59"
             placeholder="minutes"
             className="text-black"
-            onChange={event => getChangeHandler("minutes")(event) }
+            onChange={event => getChangeHandler("minutes")(event)}
             onKeyDown={event => enterPress(event)}
           />
           <div className="flex text-xs pl-4 pr-4">minutes</div>
@@ -92,7 +90,7 @@ export default function TimeInputs({
             max="59"
             placeholder="seconds"
             className="text-black"
-            onChange={event => getChangeHandler("seconds")(event) }
+            onChange={event => getChangeHandler("seconds")(event)}
             onKeyDown={event => enterPress(event)}
           />
           <div className="flex text-xs pl-4 pr-4">seconds</div>

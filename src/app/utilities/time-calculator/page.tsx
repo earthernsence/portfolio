@@ -6,7 +6,5 @@ export const metadata: Metadata = {
 };
 
 export default function TimeCalculatorPage() {
-  return (
-    <TimeCalculator />
-  );
+  return <TimeCalculator />;
 }

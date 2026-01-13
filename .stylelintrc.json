@@ -15,13 +15,7 @@
     "property-no-vendor-prefix": [
       true,
       {
-        "ignoreProperties": [
-          "appearance",
-          "background-clip",
-          "backdrop-filter",
-          "clip-path",
-          "user-select"
-        ]
+        "ignoreProperties": ["appearance", "background-clip", "backdrop-filter", "clip-path", "user-select"]
       }
     ],
 
@@ -85,15 +79,7 @@
           "groupName": "flex",
           "emptyLineBefore": "never",
           "noEmptyLineBetween": true,
-          "properties": [
-            "flex",
-            "flex-grow",
-            "flex-shrink",
-            "flex-basis",
-            "flex-flow",
-            "flex-direction",
-            "flex-wrap"
-          ]
+          "properties": ["flex", "flex-grow", "flex-shrink", "flex-basis", "flex-flow", "flex-direction", "flex-wrap"]
         },
         {
           "groupName": "grid",
@@ -145,16 +131,7 @@
           "groupName": "position",
           "emptyLineBefore": "never",
           "noEmptyLineBetween": true,
-          "properties": [
-            "position",
-            "will-change",
-            "inset",
-            "top",
-            "right",
-            "bottom",
-            "left",
-            "z-index"
-          ]
+          "properties": ["position", "will-change", "inset", "top", "right", "bottom", "left", "z-index"]
         },
         {
           "groupName": "alignment",
@@ -181,14 +158,7 @@
           "groupName": "svg",
           "emptyLineBefore": "never",
           "noEmptyLineBetween": true,
-          "properties": [
-            "stroke",
-            "stroke-width",
-            "stroke-linecap",
-            "stroke-dasharray",
-            "fill",
-            "text-anchor"
-          ]
+          "properties": ["stroke", "stroke-width", "stroke-linecap", "stroke-dasharray", "fill", "text-anchor"]
         },
         {
           "groupName": "font",
@@ -283,13 +253,7 @@
           "groupName": "outline",
           "emptyLineBefore": "never",
           "noEmptyLineBetween": true,
-          "properties": [
-            "outline",
-            "outline-width",
-            "outline-style",
-            "outline-color",
-            "outline-offset"
-          ]
+          "properties": ["outline", "outline-width", "outline-style", "outline-color", "outline-offset"]
         },
         {
           "groupName": "margin",
@@ -301,13 +265,7 @@
           "groupName": "padding",
           "emptyLineBefore": "never",
           "noEmptyLineBetween": true,
-          "properties": [
-            "padding",
-            "padding-top",
-            "padding-right",
-            "padding-bottom",
-            "padding-left"
-          ]
+          "properties": ["padding", "padding-top", "padding-right", "padding-bottom", "padding-left"]
         },
         {
           "groupName": "animation",

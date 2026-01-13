@@ -8,21 +8,21 @@ import Icon from "../common/Icon";
 import tc from "#/projects/small/tc.png";
 
 export const metadata: Metadata = {
-  title: "Utilities",
+  title: "Utilities"
 };
 
 type Page = {
   name: string;
   link: string;
-  icon: IconDefinition
+  icon: IconDefinition;
 };
 
 type Utility = {
-  id: string,
-  name: string,
-  description: string,
-  image: StaticImageData,
-  links: Array<Page>,
+  id: string;
+  name: string;
+  description: string;
+  image: StaticImageData;
+  links: Array<Page>;
 };
 
 const utilities: Array<Utility> = [
@@ -35,7 +35,7 @@ const utilities: Array<Utility> = [
       {
         name: "gh",
         link: "https://github.com/earthernsence/portfolio/tree/master/src/app/utilities/time-calculator",
-        icon: faGithub,
+        icon: faGithub
       },
       {
         name: "play",
@@ -53,19 +53,18 @@ const SingleProject = (props: { utility: Utility }) => (
         className="flex border-gray-300 border-2 mr-4"
         src={props.utility.image}
         alt={`Project image for ${props.utility.name}`}
-        height={128} width={128}
+        height={128}
+        width={128}
       />
     </div>
     <div className="flex flex-col relative w-1/2">
-      <div className="text-2xl text-white">{ props.utility.name }</div>
-      <div className="text-md text-gray-400">{ props.utility.description }</div>
+      <div className="text-2xl text-white">{props.utility.name}</div>
+      <div className="text-md text-gray-400">{props.utility.description}</div>
     </div>
     <div className="flex xs:flex-col md:flex-row w-1/4 justify-center place-items-center">
-      {
-        props.utility.links.map((page: Page, index: number) =>
-          <Icon icon={page.icon} link={page.link} key={index} className="text-white" />
-        )
-      }
+      {props.utility.links.map((page: Page, index: number) => (
+        <Icon icon={page.icon} link={page.link} key={index} className="text-white" />
+      ))}
     </div>
   </div>
 );
@@ -76,19 +75,17 @@ export default function UtilitiesPage() {
       <div className="place-self-center w-full max-w-7xl pt-0 pb-12 pl-16 pr-16 xs:text-left md:text-justify">
         <div className="text-4xl xs:text-center md:text-left">Utilities</div>
         <br />
-      There are a few things I&apos;ve made to improve my personal quality-of-life. I get annoyed pretty easily
-      and am tired of not being able to do things quickly. As with any other project like this, it usually takes
-      about an hour to be able to save me thirty seconds.
+        There are a few things I&apos;ve made to improve my personal quality-of-life. I get annoyed pretty easily and am
+        tired of not being able to do things quickly. As with any other project like this, it usually takes about an
+        hour to be able to save me thirty seconds.
         <br />
         <br />
         <div className="text-xl underline">List of utilities</div>
         <br />
         <div className="flex flex-col items-center">
-          {
-            utilities.map((utility: Utility, index: number) =>
-              <SingleProject utility={utility} key={index} />
-            )
-          }
+          {utilities.map((utility: Utility, index: number) => (
+            <SingleProject utility={utility} key={index} />
+          ))}
         </div>
       </div>
     </>

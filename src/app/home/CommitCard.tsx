@@ -26,11 +26,15 @@ export const CommitCard = (props: { repository: Repository }) => {
         <Image
           className="flex border-gray-300 rounded-full border-2 h-12 w-12 mr-4"
           src={commit.author?.avatar_url ?? "#/projects/no_image.png"}
-          alt="Github avatar" width={50} height={50}
+          alt="Github avatar"
+          width={50}
+          height={50}
         />
         <div className="flex flex-col text-left">
           <div className="flex flex-row text-left place-items-baseline">
-            <URL href={commit.html_url} className="text-xs pr-1">{ commit.commit.message }</URL>
+            <URL href={commit.html_url} className="text-xs pr-1">
+              {commit.commit.message}
+            </URL>
             {/*
               This URL split takes a URL like https://github.com/earthernsence/ADAnswers-Bot/
               and finds the repository name.
@@ -38,10 +42,10 @@ export const CommitCard = (props: { repository: Repository }) => {
               in the page.tsx file results in them being rendered out of order sometimes.
               Doing it like this works for sure and skips all of the nonsense of doing it in page
             */}
-            <div className="text-[9px] text-gray-700">({ commit.html_url.split("/")[4] })</div>
+            <div className="text-[9px] text-gray-700">({commit.html_url.split("/")[4]})</div>
           </div>
           <div className="text-gray-400 text-xs">
-            Updated on { new Date(commit.commit.committer?.date ?? 0).toDateString() }
+            Updated on {new Date(commit.commit.committer?.date ?? 0).toDateString()}
           </div>
         </div>
       </div>

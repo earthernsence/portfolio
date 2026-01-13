@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 
-export const Icon = (props: { icon: IconDefinition, link?: string, className?: string }) => (
+export const Icon = (props: { icon: IconDefinition; link?: string; className?: string }) => (
   <a
     href={props.link}
     target="_blank"
@@ -10,12 +10,7 @@ export const Icon = (props: { icon: IconDefinition, link?: string, className?: s
               hover:opacity-100 hover:scale-110
               ${props.className}`}
   >
-    <FontAwesomeIcon
-      icon={props.icon}
-      width={50}
-      height={50}
-      className="w-12 h-12"
-    />
+    <FontAwesomeIcon icon={props.icon} width={50} height={50} className="w-12 h-12" />
   </a>
 );
 

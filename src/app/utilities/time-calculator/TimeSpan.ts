@@ -308,7 +308,7 @@ export class TimeSpan {
   static get minValue() {
     return new TimeSpan(Number.MIN_VALUE);
   }
-};
+}
 
 export const Guard = {
   isDefined(value: unknown, message?: string) {

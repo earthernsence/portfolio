@@ -19,14 +19,17 @@ export default defineConfig([
   ...nextVitals,
   {
     languageOptions: {
-      parser: tsParser,
+      parser: tsParser
     },
 
     rules: {
-      "sort-imports": ["warn", {
-        ignoreCase: true,
-        allowSeparatedGroups: true,
-      }],
+      "sort-imports": [
+        "warn",
+        {
+          ignoreCase: true,
+          allowSeparatedGroups: true
+        }
+      ],
 
       "no-console": "warn",
       "no-template-curly-in-string": "warn",
@@ -37,9 +40,12 @@ export default defineConfig([
       "dot-notation": "error",
       eqeqeq: "error",
 
-      "no-else-return": ["error", {
-        allowElseIf: false,
-      }],
+      "no-else-return": [
+        "error",
+        {
+          allowElseIf: false
+        }
+      ],
 
       "no-empty-function": "error",
       "no-eval": "error",
@@ -83,30 +89,47 @@ export default defineConfig([
       "no-shadow-restricted-names": "error",
       "no-undef": "off",
 
-      "no-unused-vars": ["error", {
-        vars: "local",
-        args: "after-used",
-      }],
+      "no-unused-vars": [
+        "error",
+        {
+          vars: "local",
+          args: "after-used"
+        }
+      ],
 
-      "no-use-before-define": ["error", {
-        functions: false,
-        variables: false,
-      }],
+      "no-use-before-define": [
+        "error",
+        {
+          functions: false,
+          variables: false
+        }
+      ],
 
       "array-bracket-spacing": "error",
       "block-spacing": "error",
 
-      "brace-style": ["error", "1tbs", {
-        allowSingleLine: true,
-      }],
+      "brace-style": [
+        "error",
+        "1tbs",
+        {
+          allowSingleLine: true
+        }
+      ],
 
-      camelcase: ["error", {
-        allow: ["sha512_256"],
-      }],
+      camelcase: [
+        "error",
+        {
+          allow: ["sha512_256"]
+        }
+      ],
 
-      "capitalized-comments": ["error", "always", {
-        ignoreConsecutiveComments: true,
-      }],
+      "capitalized-comments": [
+        "error",
+        "always",
+        {
+          ignoreConsecutiveComments: true
+        }
+      ],
 
       "comma-spacing": "error",
       "comma-style": "error",
@@ -115,23 +138,34 @@ export default defineConfig([
       "func-call-spacing": "error",
       "id-blacklist": ["error", "ret", "helper", "temp", "tmp"],
 
-      indent: ["warn", 2, {
-        SwitchCase: 1,
-      }],
+      indent: [
+        "warn",
+        2,
+        {
+          SwitchCase: 1
+        }
+      ],
 
       "key-spacing": "error",
       "keyword-spacing": "error",
       "line-comment-position": "error",
 
-      "lines-between-class-members": ["error", "always", {
-        exceptAfterSingleLine: true,
-      }],
+      "lines-between-class-members": [
+        "error",
+        "always",
+        {
+          exceptAfterSingleLine: true
+        }
+      ],
 
       "max-depth": "warn",
 
-      "max-len": ["warn", {
-        code: 120,
-      }],
+      "max-len": [
+        "warn",
+        {
+          code: 120
+        }
+      ],
 
       "max-params": "warn",
       "max-statements-per-line": "error",
@@ -153,17 +187,25 @@ export default defineConfig([
       "object-curly-spacing": ["error", "always"],
       "operator-assignment": "error",
 
-      "operator-linebreak": ["error", "after", {
-        overrides: {
-          "?": "before",
-          ":": "before",
-        },
-      }],
+      "operator-linebreak": [
+        "error",
+        "after",
+        {
+          overrides: {
+            "?": "before",
+            ":": "before"
+          }
+        }
+      ],
 
-      quotes: ["error", "double", {
-        avoidEscape: true,
-        allowTemplateLiterals: true,
-      }],
+      quotes: [
+        "error",
+        "double",
+        {
+          avoidEscape: true,
+          allowTemplateLiterals: true
+        }
+      ],
 
       semi: "warn",
       "semi-spacing": "error",
@@ -179,9 +221,12 @@ export default defineConfig([
       "arrow-parens": ["error", "as-needed"],
       "arrow-spacing": "error",
 
-      "no-confusing-arrow": ["error", {
-        allowParens: true,
-      }],
+      "no-confusing-arrow": [
+        "error",
+        {
+          allowParens: true
+        }
+      ],
 
       "no-duplicate-imports": "error",
       "no-useless-computed-key": "error",
@@ -194,7 +239,7 @@ export default defineConfig([
       "prefer-spread": "error",
       "rest-spread-spacing": "error",
       "template-curly-spacing": "error",
-      "prefer-template": "error",
-    },
-  },
+      "prefer-template": "error"
+    }
+  }
 ]);

@@ -12,14 +12,14 @@ import Icon from "../common/Icon";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Projects"
 };
 
 type Page = {
   name: string;
   link: string;
-  icon: IconDefinition
-}
+  icon: IconDefinition;
+};
 
 type Project = {
   id: string;
@@ -30,8 +30,8 @@ type Project = {
   fields: string;
   description: string;
   route?: string;
-  infoPages?: Array<Page>
-}
+  infoPages?: Array<Page>;
+};
 
 const Projects: Array<Project> = [
   {
@@ -111,13 +111,13 @@ const Projects: Array<Project> = [
       {
         name: "gh",
         link: "https://github.com/earthernsence/golden-years",
-        icon: faGithub,
+        icon: faGithub
       },
       {
         name: "play",
         link: "https://golden-years.vercel.app",
         icon: faGamepad
-      },
+      }
     ]
   },
   {
@@ -141,7 +141,7 @@ const Projects: Array<Project> = [
     description: `There are a few things I've made to improve my personal quality-of-life. 
     I get annoyed pretty easily and am tired of not being able to do things quickly.`,
     route: "/utilities/"
-  },
+  }
 ];
 
 const SingleProject = (props: { project: Project }) => {
@@ -149,51 +149,56 @@ const SingleProject = (props: { project: Project }) => {
 
   return (
     <>
-      <div className="flex flex-col justify-start m-1 p-2 w-[calc(50%-2rem)] min-w-[22rem]
-                    bg-gray-400 text-black border-4 border-gray-700 border-solid rounded-2xl">
-        {
-          proj.image
-            ? <Image className="object-contain h-80 mb-4 place-self-center"
-              src={proj.image}
-              alt={`Project image for ${proj.title}`} />
-            : null
-        }
-        <b>{ proj.title }</b>
-        <i>{ proj.category }</i>
-        <i>{ proj.date }</i>
-        <i>{ proj.fields }</i>
+      <div
+        className="flex flex-col justify-start m-1 p-2 w-[calc(50%-2rem)] min-w-[22rem]
+                    bg-gray-400 text-black border-4 border-gray-700 border-solid rounded-2xl"
+      >
+        {proj.image ? (
+          <Image
+            className="object-contain h-80 mb-4 place-self-center"
+            src={proj.image}
+            alt={`Project image for ${proj.title}`}
+          />
+        ) : null}
+        <b>{proj.title}</b>
+        <i>{proj.category}</i>
+        <i>{proj.date}</i>
+        <i>{proj.fields}</i>
         <br />
-        { proj.description }
+        {proj.description}
         <br />
         <br />
         <div className="flex flex-row justify-start w-full place-items-center">
-          {
-            proj.route
-              ? <Link href={proj.route}>
-                <button className="rounded-lg border-solid border-2 border-transparent
+          {proj.route ? (
+            <Link href={proj.route}>
+              <button
+                className="rounded-lg border-solid border-2 border-transparent
                                   pt-2 pb-2 pr-4 pl-4 mr-4
                                   font-medium text-base font-sans text-black bg-white cursor-pointer
                                   transition-[border-color] duration-300
                                   hover:border-slate-600
-                                  focus:outline-4 focus:outline focus:outline-blue-950">More Information</button>
-              </Link>
-              : <button className="rounded-lg border-solid border-2 border-transparent
+                                  focus:outline-4 focus:outline focus:outline-blue-950"
+              >
+                More Information
+              </button>
+            </Link>
+          ) : (
+            <button
+              className="rounded-lg border-solid border-2 border-transparent
                                   pt-2 pb-2 pr-4 pl-4 mr-4
                                   font-medium text-base font-sans text-black bg-white cursor-pointer
                                   transition-[border-color] duration-300
                                   hover:border-slate-600
                                   focus:outline-4 focus:outline focus:outline-blue-950
-                                  disabled:bg-gray-600 disabled:border-gray-500 disabled:cursor-not-allowed" disabled>
-                                    Info Unavailable
-              </button>
-          }
-          {
-            proj.infoPages
-              ? proj.infoPages.map((page: Page, index: number) =>
-                <Icon icon={page.icon} link={page.link} key={index} />
-              )
-              : null
-          }
+                                  disabled:bg-gray-600 disabled:border-gray-500 disabled:cursor-not-allowed"
+              disabled
+            >
+              Info Unavailable
+            </button>
+          )}
+          {proj.infoPages
+            ? proj.infoPages.map((page: Page, index: number) => <Icon icon={page.icon} link={page.link} key={index} />)
+            : null}
         </div>
         <br />
       </div>
@@ -213,7 +218,9 @@ const ProjectPage = () => (
       </div>
       <br />
       <div className="flex flex-row flex-wrap w-full justify-evenly">
-        { Projects.map((project: Project, index: number) => <SingleProject project={project} key={index} />) }
+        {Projects.map((project: Project, index: number) => (
+          <SingleProject project={project} key={index} />
+        ))}
       </div>
     </div>
   </>

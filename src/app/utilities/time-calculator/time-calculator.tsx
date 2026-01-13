@@ -16,14 +16,14 @@ export default function TimeCalculator() {
       <br />
       <TimeList times={times} />
       <br />
-      {
-        times.length > 0
-          ? <div className="text-lg">
-            This equates to{" "}
-            { `${times.reduce((accumulator, currentValue) => accumulator.plus(currentValue), new TimeSpan(0))}`}
-          </div>
-          : <div className="text-lg">Add a time to see further information...</div>
-      }
+      {times.length > 0 ? (
+        <div className="text-lg">
+          This equates to{" "}
+          {`${times.reduce((accumulator, currentValue) => accumulator.plus(currentValue), new TimeSpan(0))}`}
+        </div>
+      ) : (
+        <div className="text-lg">Add a time to see further information...</div>
+      )}
     </main>
   );
 }
