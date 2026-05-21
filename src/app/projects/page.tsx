@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import gy from "#/projects/golden_years_logo.png";
 import logoAD from "#/projects/AD_loading.png";
+import mubsb from "#/projects/mubsb.png";
 import noImg from "#/projects/no_image.png";
 
 import { faGithub, IconDefinition } from "@fortawesome/free-brands-svg-icons";
@@ -58,6 +59,17 @@ const Projects: Array<Project> = [
     ]
   },
   {
+    id: "mubsb",
+    image: mubsb,
+    title: "Mizzou Baseball",
+    category: "Work Experience",
+    date: "January 2026 to present",
+    fields: "Data Analysis + Visualisation, R, SQL",
+    description: `I am a current student data analyst for the Missouri Tigers, where I work with the Trackman Baseball
+      system. I work directly with coaches alongside other student analysts to develop comprehensive reports assessing
+      player performance.`
+  },
+  {
     id: "bot",
     image: noImg,
     title: "Antimatter Dimensions Discord Bot",
@@ -71,29 +83,6 @@ const Projects: Array<Project> = [
         name: "gh",
         link: "https://github.com/earthernsence/ADAnswers-Bot",
         icon: faGithub
-      }
-    ]
-  },
-  {
-    id: "brainlet",
-    image: noImg,
-    title: "Brainlet",
-    category: "Experience",
-    date: "February 2024 to present",
-    fields: "React + Next.js, with Convex/Edgestore",
-    description: `In my computer science class, we were asked to recreate a popular application
-    as a final project. Me and a team of two other developers co-created Brainlet, a full-stack
-    note-taking application based on Notion.`,
-    infoPages: [
-      {
-        name: "gh",
-        link: "https://github.com/earthernsence/brainlet",
-        icon: faGithub
-      },
-      {
-        name: "play",
-        link: "https://brainlet-rho.vercel.app",
-        icon: faGamepad
       }
     ]
   },
@@ -116,6 +105,29 @@ const Projects: Array<Project> = [
       {
         name: "play",
         link: "https://golden-years.vercel.app",
+        icon: faGamepad
+      }
+    ]
+  },
+  {
+    id: "brainlet",
+    image: noImg,
+    title: "Brainlet",
+    category: "Experience",
+    date: "February 2024 to present",
+    fields: "React + Next.js, with Convex/Edgestore",
+    description: `In my computer science capstone class, we were asked to recreate a popular application
+    as a final project. Me and a team of two other developers co-created Brainlet, a full-stack
+    note-taking application based on Notion.`,
+    infoPages: [
+      {
+        name: "gh",
+        link: "https://github.com/earthernsence/brainlet",
+        icon: faGithub
+      },
+      {
+        name: "play",
+        link: "https://brainlet-rho.vercel.app",
         icon: faGamepad
       }
     ]

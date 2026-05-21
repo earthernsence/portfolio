@@ -1,5 +1,6 @@
-import CommitsList from "./CommitsList";
 import Link from "next/link";
+
+import CommitsList from "./CommitsList";
 import URL from "../common/URL";
 
 const HomePage = () => (
@@ -16,19 +17,32 @@ const HomePage = () => (
       also my first experience with React (with next.js), so I am learning along the way!
       <br />
       <br />
+      Visit the{" "}
+      <Link className="text-cyan-700 visited:text-violet-700 underline" href={"/projects"}>
+        Projects
+      </Link>{" "}
+      page for up-to-date information on my whereabouts. I like to think I have worked on some neat stuff, but you can
+      be the judge. Or, you can indulge me by reading the{" "}
+      <Link className="text-cyan-700 visited:text-violet-700 underline" href={"/about"}>
+        About
+      </Link>{" "}
+      page.
+      <br />
+      <br />
       <div className="text-gray-500 text-xs">
         Major thanks to cyip92 and <URL href="https://cyip92.github.io/site">his website</URL> for some code &
         inspiration. You can also visit the source of this site{" "}
         <URL href="https://github.com/earthernsence/portfolio">here</URL>!
       </div>
-      <br />
+      {/* <br />
       <div className="text-gray-500 text-xs">
         I am also open to working on projects, like portfolio websites, for people. See{" "}
         <Link className="text-gray-400 text-xs hover:underline" href={"/about"}>
           my About page
         </Link>{" "}
         for more information!
-      </div>
+      </div> */}
+      <br />
       <br />
       <CommitsList />
     </div>
