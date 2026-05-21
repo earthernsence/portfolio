@@ -167,7 +167,7 @@ const SingleProject = (props: { project: Project }) => {
       >
         {proj.image ? (
           <Image
-            className="object-contain h-80 mb-4 place-self-center"
+            className="object-contain h-80 mb-4 place-self-center w-auto"
             src={proj.image}
             alt={`Project image for ${proj.title}`}
           />
