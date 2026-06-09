@@ -17,9 +17,9 @@ export const CommitsList = () => {
   return (
     <>
       <div className="flex flex-col gap-y-1">
-        <div className="text-xs italic text-left text-gray-500 opacity-80">recent commits...</div>
-        <div className="text-xs italic text-left text-gray-600 opacity-80">
-          this shows my 5 most recently updated repositories and their most recent commit
+        <div className="text-xs italic text-left text-gray-400 opacity-80">recent commits...</div>
+        <div className="text-xs italic text-left text-gray-500 opacity-80">
+          this shows my 5 most recently updated (public!) repositories and their most recent commit
         </div>
         <br />
         <br />
