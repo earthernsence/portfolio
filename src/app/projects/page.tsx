@@ -8,7 +8,7 @@ import mubsb from "#/projects/mubsb.png";
 import noImg from "#/projects/no_image.png";
 
 import { faGithub, IconDefinition } from "@fortawesome/free-brands-svg-icons";
-import { faGamepad } from "@fortawesome/free-solid-svg-icons";
+import { faGamepad, faUtensils } from "@fortawesome/free-solid-svg-icons";
 import Icon from "../common/Icon";
 import { Metadata } from "next";
 
@@ -129,6 +129,28 @@ const Projects: Array<Project> = [
         name: "play",
         link: "https://brainlet-rho.vercel.app",
         icon: faGamepad
+      }
+    ]
+  },
+  {
+    id: "cookbook",
+    image: noImg,
+    title: "My Personal Cookbook",
+    category: "Summer Project",
+    date: "June 2026 to present",
+    fields: "Svelte / SvelteKit + Drizzle",
+    description: `As a current college student who does actually like to cook, I found it wise to take some of
+      the recipes I knew from home with me to college.`,
+    infoPages: [
+      {
+        name: "gh",
+        link: "https://github.com/earthernsence/recipe-book",
+        icon: faGithub
+      },
+      {
+        name: "play",
+        link: "https://jroyvibes-cookbook.vercel.app",
+        icon: faUtensils
       }
     ]
   },
